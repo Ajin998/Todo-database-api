@@ -12,7 +12,7 @@ router.put("/:id", async (req, res) => {
     res.status(200).json({ val_to_update });
     console.log("Successfully acknowledged!");
   } catch (err) {
-    res.status(400).json({ message: "Please check the ID!!" });
+    res.status(400).json({ status: "Cannot process further",Due_to: "Either ID is invalid or status is not specified as  ['Completed','Pending']"});
   }
 });
 module.exports = router;
